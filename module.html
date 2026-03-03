@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module — Hutcheson Software</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #1a1a1a;
+    --white: #f4f2ed;
+    --grey: #6b6b6b;
+    --mono: "IBM Plex Mono", monospace;
+    --sans: "IBM Plex Sans", system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--black);
+    background: var(--white);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 60px;
+  }
+
+  a { color: var(--black); text-decoration: none; }
+  a:hover { background: var(--black); color: var(--white); }
+
+  /* ── HEADER ── */
+  header {
+    padding: 0.75rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .site-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .back-link {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--grey);
+  }
+
+  .back-link:hover { background: var(--black); color: var(--white); }
+
+  /* ── LAYOUT ── */
+  .project-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr 160px;
+    flex: 1;
+  }
+
+  /* ── LEFT COLUMN ── */
+  .col-left {
+    padding: 1.5rem 1.25rem 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+  }
+
+  .meta-block { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .meta-item {}
+
+  .meta-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--grey);
+    display: block;
+    margin-bottom: 0.1rem;
+  }
+
+  .meta-value { font-size: 0.82rem; }
+
+  .divider { display: none; }
+
+  .project-desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--black);
+  }
+
+  /* ── CENTRE COLUMN ── */
+  .col-centre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    min-height: 80vh;
+    background: var(--white);
+  }
+
+  .col-centre img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* ── RIGHT COLUMN ── */
+  .col-right {
+    padding: 1.5rem 1rem;
+  }
+
+  .selector-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--grey);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .image-selector {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .image-selector li { list-style: none; }
+
+  .image-selector button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--black);
+    padding: 0.5rem 0;
+    text-align: left;
+    width: 100%;
+    line-height: 1.4;
+  }
+
+  .image-selector button:hover {
+    background: var(--black);
+    color: var(--white);
+    padding-left: 0.25rem;
+  }
+
+  .image-selector button.active {
+    background: var(--black);
+    color: var(--white);
+    padding-left: 0.25rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.75rem;
+    color: var(--grey);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  footer nav {
+    display: flex;
+    gap: 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+  }
+
+  footer nav a { color: var(--black); }
+  footer nav a:hover { background: var(--black); color: var(--white); }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .project-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .col-left {
+      border-right: none;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .col-centre {
+      min-height: 60vw;
+    }
+
+    .col-right {
+      border-left: none;
+      border-top: 1px solid var(--black);
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="site-name"><a href="/">Hutcheson Software</a></div>
+  <a href="/" class="back-link">← Back</a>
+</header>
+
+<div class="project-layout">
+
+  <!-- LEFT: project info -->
+  <aside class="col-left">
+    <h1 class="project-title">Module</h1>
+    <div class="meta-block">
+      <div class="meta-item">
+        <span class="meta-label">Industry</span>
+        <span class="meta-value">FinTech</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Role</span>
+        <span class="meta-value">Product Design, Prototyping</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Year</span>
+        <span class="meta-value">2024</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Status</span>
+        <span class="meta-value">Delivered</span>
+      </div>
+    </div>
+    <p class="project-desc">Next-gen billing management platform for scaling SaaS companies. Focused on reducing friction in subscription management and surfacing actionable revenue data for finance teams.</p>
+    <p class="project-desc">My role covered end-to-end product design — from early-stage discovery and wireframing through to high-fidelity UI and developer handoff.</p>
+  </aside>
+
+  <!-- CENTRE: image display -->
+  <main class="col-centre">
+    <img id="main-image"
+      src="https://placehold.co/800x1000/d5d2cb/9a9890"
+      alt="Module — Billing dashboard"
+      width="800"
+      height="1000"
+    >
+  </main>
+
+  <!-- RIGHT: image selector -->
+  <aside class="col-right">
+    <span class="selector-label">Images</span>
+    <ul class="image-selector">
+      <li>
+        <button class="active" onclick="setImage(this, 'https://placehold.co/800x1000/d5d2cb/9a9890', 'Module — Billing dashboard')">
+          Billing dashboard
+        </button>
+      </li>
+      <li>
+        <button onclick="setImage(this, 'https://placehold.co/800x1000/cccac3/9a9890', 'Module — Subscription flow')">
+          Subscription flow
+        </button>
+      </li>
+      <li>
+        <button onclick="setImage(this, 'https://placehold.co/800x1000/d5d2cb/9a9890', 'Module — Invoice detail')">
+          Invoice detail
+        </button>
+      </li>
+      <li>
+        <button onclick="setImage(this, 'https://placehold.co/800x1000/cccac3/9a9890', 'Module — Revenue analytics')">
+          Revenue analytics
+        </button>
+      </li>
+      <li>
+        <button onclick="setImage(this, 'https://placehold.co/800x1000/d5d2cb/9a9890', 'Module — Customer portal')">
+          Customer portal
+        </button>
+      </li>
+    </ul>
+  </aside>
+
+</div>
+
+<footer>
+  <nav>
+    <a href="/work">Work</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <div class="footer-bottom">
+    <span>David Lee Hutcheson, 2026</span>
+    <span>Waikato,&nbsp;<svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="New Zealand" style="display:inline-block;vertical-align:middle;position:relative;top:-1px;">
+      <rect x="0.5" y="0.5" width="15" height="9" stroke="#6b6b6b" stroke-width="0.5" fill="none"/>
+      <circle cx="11.5" cy="7.5" r="0.9" fill="#6b6b6b"/>
+      <circle cx="9.5" cy="4.5" r="0.7" fill="#6b6b6b"/>
+      <circle cx="11.5" cy="2.5" r="0.7" fill="#6b6b6b"/>
+      <circle cx="13.5" cy="4.5" r="0.7" fill="#6b6b6b"/>
+      <circle cx="12.8" cy="5.8" r="0.45" fill="#6b6b6b"/>
+    </svg></span>
+  </div>
+</footer>
+
+<script>
+  function setImage(btn, src, alt) {
+    document.getElementById('main-image').src = src;
+    document.getElementById('main-image').alt = alt;
+    document.querySelectorAll('.image-selector button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

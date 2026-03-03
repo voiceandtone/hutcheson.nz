@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hutcheson Software</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #1a1a1a;
+    --white: #f4f2ed;
+    --grey: #6b6b6b;
+    --mono: "IBM Plex Mono", monospace;
+    --sans: "IBM Plex Sans", system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--black);
+    background: var(--white);
+    margin: 0;
+    padding: 0 60px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    padding: 0.75rem 0;
+  }
+
+  .site-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .site-name a { color: inherit; text-decoration: none; }
+  .site-name a:hover { color: var(--grey); }
+
+  /* ── GRID ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    padding: 2px;
+  }
+
+  .grid-item-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .grid-item-image {
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+
+  .grid-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .grid-item-label {
+    padding: 0.35rem 0 0.5rem;
+    font-family: var(--mono);
+  }
+
+  .label-title {
+    font-size: 0.72rem;
+  }
+
+  .grid-item-link:hover .label-title {
+    background: var(--black);
+    color: var(--white);
+  }
+
+  .label-industry { display: none; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 0.5rem 0;
+    font-size: 0.75rem;
+    color: var(--grey);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 2px;
+  }
+
+  footer nav {
+    display: flex;
+    gap: 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+  }
+
+  footer nav a { color: var(--black); text-decoration: none; }
+  footer nav a:hover { background: var(--black); color: var(--white); }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="site-name"><a href="/">Hutcheson Software</a></div>
+</header>
+
+<main class="grid">
+
+  <a href="/module" class="grid-item-link">
+    <div class="grid-item-image">
+      <img src="images/unknown-business-caller.webp" alt="Module — Billing dashboard" loading="lazy" width="600" height="600">
+    </div>
+    <div class="grid-item-label">
+      <span class="label-title">unknown business caller id</span>
+      <span class="label-industry">FinTech</span>
+    </div>
+  </a>
+
+  <a href="/handover" class="grid-item-link">
+    <div class="grid-item-image">
+      <img src="https://placehold.co/600x600/cccac3/9a9890" alt="Handover — Property guide interface" loading="lazy" width="600" height="600">
+    </div>
+    <div class="grid-item-label">
+      <span class="label-title">Handover</span>
+      <span class="label-industry">Travel</span>
+    </div>
+  </a>
+
+  <a href="/eureka" class="grid-item-link">
+    <div class="grid-item-image">
+      <img src="https://placehold.co/600x600/d5d2cb/9a9890" alt="Eureka — Legal document assistant" loading="lazy" width="600" height="600">
+    </div>
+    <div class="grid-item-label">
+      <span class="label-title">Eureka</span>
+      <span class="label-industry">LegalTech</span>
+    </div>
+  </a>
+
+  <a href="/silkos" class="grid-item-link">
+    <div class="grid-item-image">
+      <img src="https://placehold.co/600x600/cccac3/9a9890" alt="silkOS — Knowledge management platform" loading="lazy" width="600" height="600">
+    </div>
+    <div class="grid-item-label">
+      <span class="label-title">silkOS</span>
+      <span class="label-industry">SaaS</span>
+    </div>
+  </a>
+
+  <a href="/traitsystem" class="grid-item-link">
+    <div class="grid-item-image">
+      <img src="https://placehold.co/600x600/d5d2cb/9a9890" alt="TraitSystem — Visual classification system" loading="lazy" width="600" height="600">
+    </div>
+    <div class="grid-item-label">
+      <span class="label-title">TraitSystem</span>
+      <span class="label-industry">Gaming</span>
+    </div>
+  </a>
+
+  <a href="/module" class="grid-item-link">
+    <div class="grid-item-image">
+      <img src="https://placehold.co/600x600/cccac3/9a9890" alt="Module — Subscription flow" loading="lazy" width="600" height="600">
+    </div>
+    <div class="grid-item-label">
+      <span class="label-title">Module</span>
+      <span class="label-industry">FinTech</span>
+    </div>
+  </a>
+
+  <a href="#" class="grid-item-link">
+    <div class="grid-item-image">
+      <img src="https://placehold.co/600x600/d5d2cb/9a9890" alt="Forma — Design system" loading="lazy" width="600" height="600">
+    </div>
+    <div class="grid-item-label">
+      <span class="label-title">Forma</span>
+      <span class="label-industry">SaaS</span>
+    </div>
+  </a>
+
+  <a href="#" class="grid-item-link">
+    <div class="grid-item-image">
+      <img src="https://placehold.co/600x600/cccac3/9a9890" alt="Meridian — Data visualisation dashboard" loading="lazy" width="600" height="600">
+    </div>
+    <div class="grid-item-label">
+      <span class="label-title">Meridian</span>
+      <span class="label-industry">Analytics</span>
+    </div>
+  </a>
+
+  <a href="#" class="grid-item-link">
+    <div class="grid-item-image">
+      <img src="https://placehold.co/600x600/d5d2cb/9a9890" alt="Keel — Project management tool" loading="lazy" width="600" height="600">
+    </div>
+    <div class="grid-item-label">
+      <span class="label-title">Keel</span>
+      <span class="label-industry">Productivity</span>
+    </div>
+  </a>
+
+  <a href="#" class="grid-item-link">
+    <div class="grid-item-image">
+      <img src="https://placehold.co/600x600/cccac3/9a9890" alt="Relay — Team communication platform" loading="lazy" width="600" height="600">
+    </div>
+    <div class="grid-item-label">
+      <span class="label-title">Relay</span>
+      <span class="label-industry">Productivity</span>
+    </div>
+  </a>
+
+  <a href="#" class="grid-item-link">
+    <div class="grid-item-image">
+      <img src="https://placehold.co/600x600/d5d2cb/9a9890" alt="Ledger — Expense tracking app" loading="lazy" width="600" height="600">
+    </div>
+    <div class="grid-item-label">
+      <span class="label-title">Ledger</span>
+      <span class="label-industry">FinTech</span>
+    </div>
+  </a>
+
+  <a href="#" class="grid-item-link">
+    <div class="grid-item-image">
+      <img src="https://placehold.co/600x600/cccac3/9a9890" alt="Silo — Data storage platform" loading="lazy" width="600" height="600">
+    </div>
+    <div class="grid-item-label">
+      <span class="label-title">Silo</span>
+      <span class="label-industry">SaaS</span>
+    </div>
+  </a>
+
+</main>
+
+<footer>
+  <nav>
+    <a href="/work">Work</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <div class="footer-bottom">
+    <span>David Lee Hutcheson, 2026</span>
+    <span>Waikato,&nbsp;<svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="New Zealand" style="display:inline-block;vertical-align:middle;position:relative;top:-1px;">
+      <rect x="0.5" y="0.5" width="15" height="9" stroke="#6b6b6b" stroke-width="0.5" fill="none"/>
+      <circle cx="11.5" cy="7.5" r="0.9" fill="#6b6b6b"/>
+      <circle cx="9.5" cy="4.5" r="0.7" fill="#6b6b6b"/>
+      <circle cx="11.5" cy="2.5" r="0.7" fill="#6b6b6b"/>
+      <circle cx="13.5" cy="4.5" r="0.7" fill="#6b6b6b"/>
+      <circle cx="12.8" cy="5.8" r="0.45" fill="#6b6b6b"/>
+    </svg></span>
+  </div>
+</footer>
+
+</body>
+</html>
