@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TraitSystem — Software Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page-project">
+
+<header>
+  <div class="site-name"><a href="/">David Lee Hutcheson</a></div>
+  <a href="/" class="back-link">← Back</a>
+</header>
+
+<div class="project-layout">
+
+  <aside class="col-left">
+    <h1 class="project-title">Gamble Daily for Fun and Profit</h1>
+    <div class="meta-block">
+      <div class="meta-item">
+        <span class="meta-value">Self-published pamphlet</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Year</span>
+        <span class="meta-value">2025</span>
+      </div>
+    </div>
+    <p class="project-desc">A zine / mini-comic that describes a simple gambling strategy to reduce risk and achieve stable returns. It's satire—but it also kind of works.</p>
+    <p class="project-desc"><a href="https://www.icloud.com/iclouddrive/05dpZE98hTBldPSStLQasC24Q#Gamble_Daily_for_Fun_and_Profit_-_David_Hutcheson_(2025)">Download the .pdf</a></p>
+  </aside>
+
+  <main class="col-centre">
+    <img id="main-image"
+      src="images/gamble-1-large.webp"
+      alt="Gamble Daily for Fun and Profit — David Hutcheson"
+      width="1332"
+      height="888"
+    >
+  </main>
+
+  <aside class="col-right">
+<!--    <span class="selector-label">Images</span>  -->
+    <ul class="image-selector">
+      <li>
+        <button class="active" onclick="setImage(this, 'images/gamble-1-large.webp', 'Gamble Daily for Fun and Profit — David Hutcheson')">
+          stack
+        </button>
+      </li>
+      <li>
+        <button onclick="setImage(this, 'images/gamble-2-large.webp', 'Gamble Daily zine cover')">
+          cover
+        </button>
+      </li>
+      <li>
+        <button onclick="setImage(this, 'images/gamble-3-large.webp', 'Gamble Daily zine interior')">
+          interior
+        </button>
+      </li>
+    </ul>
+  </aside>
+
+</div>
+
+<footer>
+  <nav>
+    <a href="/about">About</a>
+    <a href="https://www.upwork.com/freelancers/~01f4d04436b46de41f?mp_source=share">Upwork</a>
+  </nav>
+  
+  <table class="footer-table">
+    <tbody>
+      <tr>
+        <td><a href="/module">Module</a></td>
+        <td>2024–2026</td>
+        <td>Product Designer</td>
+      </tr>
+      <tr>
+        <td><a href="/handover">Handover</a></td>
+        <td>2024–2025</td>
+        <td>Product Designer</td>
+      </tr>
+      <tr>
+        <td><a href="https://gosteward.com">Steward</a></td>
+        <td>2019–2023</td>
+        <td>Head of Product</td>
+      </tr>
+      <tr>
+        <td><a href="https://zyber.co.nz">Zyber</a></td>
+        <td>2012–2016</td>
+        <td>Digital Project Manager</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</footer>
+
+<script>
+  function setImage(btn, src, alt) {
+    document.getElementById('main-image').src = src;
+    document.getElementById('main-image').alt = alt;
+    document.querySelectorAll('.image-selector button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
