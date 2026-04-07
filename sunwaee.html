@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eureka — Software Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page-project">
+
+<header>
+  <div class="site-name"><a href="/">David Lee Hutcheson</a></div>
+  <a href="/" class="back-link">← Back</a>
+</header>
+
+<div class="project-layout">
+
+  <aside class="col-left">
+    <h1 class="project-title">Sunwaee</h1>
+    <div class="meta-block">
+      <div class="meta-item">
+        <span class="meta-label">Industry</span>
+        <span class="meta-value">AI</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Role</span>
+        <span class="meta-value">Concept Designer</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Year</span>
+        <span class="meta-value">2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Tech</span>
+        <ul>
+        <li><span class="meta-value">Figma</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="project-desc">Pitched as the <em>almost anything app</em> Sunwaee is an early stage AI assistant that I provided concept design services for. The main focus was on refining the layout and interactions of the main chat UI. </p>
+  </aside>
+
+  <main class="col-centre">
+    <img id="main-image"
+      src="images/sun-1.webp"
+      alt="Sunwaee — AI Concept Design"
+      width="1332"
+      height="888"
+    >
+  </main>
+
+  <aside class="col-right">
+<!--    <span class="selector-label">Images</span>  -->
+    <ul class="image-selector">
+      <li>
+        <button class="active" onclick="setImage(this, 'images/sun-1.webp', 'Sunwaee — AI Concept Design')">
+          begin chat
+        </button>
+      </li>
+      <li>
+        <button onclick="setImage(this, 'images/sun-2.webp', 'Sunwaee — Interaction Designs')">
+          interactions
+        </button>
+      </li>
+      <li>
+        <button onclick="setImage(this, 'images/sun-3.webp', 'Sunwaee — AI Chat Design')">
+          chat in progress
+        </button>
+      </li>
+      <li>
+        <button onclick="setImage(this, 'images/sun-4.webp', 'Sunwaee — Original Design')">
+          previous design
+        </button>
+      </li>
+    </ul>
+  </aside>
+
+</div>
+
+<footer>
+  <nav>
+    <a href="/about.html">About</a>
+    <a href="https://www.upwork.com/freelancers/~01f4d04436b46de41f?mp_source=share">Upwork</a>
+  </nav>
+  
+  <table class="footer-table">
+    <tbody>
+      <tr>
+        <td><a href="/module.html">Module</a></td>
+        <td>2024–2026</td>
+        <td>Product Designer</td>
+      </tr>
+      <tr>
+        <td><a href="/handover.html">Handover</a></td>
+        <td>2024–2025</td>
+        <td>Product Designer</td>
+      </tr>
+      <tr>
+        <td><a href="https://gosteward.com">Steward</a></td>
+        <td>2019–2023</td>
+        <td>Head of Product</td>
+      </tr>
+      <tr>
+        <td><a href="https://zyber.co.nz">Zyber</a></td>
+        <td>2012–2016</td>
+        <td>Digital Project Manager</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</footer>
+
+<script>
+  function setImage(btn, src, alt) {
+    document.getElementById('main-image').src = src;
+    document.getElementById('main-image').alt = alt;
+    document.querySelectorAll('.image-selector button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
